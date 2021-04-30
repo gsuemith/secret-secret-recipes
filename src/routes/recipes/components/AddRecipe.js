@@ -5,12 +5,12 @@ const initialState = {
 }
 
 const AddRecipe = () => {
-    const [ form, setForm ] = useState(initialState)
-    return (
-        <div>
-            
-        </div>
-    )
+	const [ recipe, setRecipe ] = useState(initialState)
+	return (
+		<div>
+			
+		</div>
+	)
 }
 
 export default AddRecipe

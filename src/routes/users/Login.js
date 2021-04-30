@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
+const URL = process.env.REACT_APP_API_URL
+
 const initialFormValues = {
   username: "",
   password: "",
@@ -9,20 +11,10 @@ const initialFormValues = {
 const Login = () => {
 
   const [formValues, setFormValues ] = useState(initialFormValues)
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'assets/js/main.js'
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
   
   const submit = () => {
     axios
-    .post("https://localhost:3000/api/auth/login", formValues)
+    .post(`${URL}/api/auth/login`, formValues)
     .then((res) => {
       localStorage.setItem('token', res.data.token);
     })
@@ -46,30 +38,27 @@ const Login = () => {
   }
 
   return (
-    <div id="main">
-
-    
     <section>
       <h2> Login to your secret secret acccount </h2>
-      <div className="row"> 
-        <div className="col-8 col-12-small">
-        <form method="post" action="#">
+      
+        
+        <form onSubmit={onSubmit} id="login-form">
           <div className="row gtr-uniform gtr-50">
-          <div className="col-6 col-12-xsmall"><input type="text" onChange={onChange} value={formValues.username} name="username" id="username" placeholder="Username" />
+          <div className="col-6 col-12-xsmall">
+            <input type="text" onChange={onChange} value={formValues.username} name="username" id="username" placeholder="Username" />
           </div>
-          </div>
-          <div className="row gtr-uniform gtr-50">
-          <div className="col-6 col-12-xsmall"><input type="text"  onChange={onChange} value={formValues.password} name="password" id="password" placeholder="Password" />
+         
+          <div className="col-6 col-12-xsmall">
+            <input type="text"  onChange={onChange} value={formValues.password} name="password" id="password" placeholder="Password" />
           </div>
           </div>
         </form>
-        </div>
+        
         <ul className="actions">
-          <li><input type="submit" value="Log In" /></li>
+          <li><input type="submit" value="Log In" className="primary" form="login-form"/></li>
         </ul>
-      </div>
+      
     </section>
-    </div>
   )
 }
 

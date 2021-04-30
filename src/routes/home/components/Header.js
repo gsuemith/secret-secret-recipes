@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Header = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'assets/js/main.js'
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script)
+    }
+    
+  }, [])
+
   return (
   <header id="header">
     <div className="inner">

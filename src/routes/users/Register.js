@@ -6,29 +6,36 @@ const Register = () => {
       
   })
 
+  const register = e => {
+    e.preventDefault();
+    console.log('register!')
+  }
+
   return (
-    <div id="main">
+   
 
     
-    <section>
-      <h2>Create an Account!</h2>
-      <div className="row">
-        <div className="col-8 col-12-small">
-          
-          <form>
-            <div className="row gtr-uniform gtr-50">
-              <div className="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-              <div className="col-6 col-12-xsmall"><input type="text" name="email" id="name" placeholder="Email" /></div>
-              <div className="col-6 col-12-xsmall"><input type="text" name="password" id="name" placeholder="Password" /></div>
-              <div className="col-6 col-12-xsmall"><input type="text" name="confirm_password" id="name" placeholder="Confirm Password" /></div>
-              
-            </div>
+  <section>
+    <h2>Create an Account!</h2>
+    
+        
+        <form id="register-form" onSubmit={register}>
+          <div className="row gtr-uniform gtr-50">
+            <div className="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+            <div className="col-6 col-12-xsmall"><input type="text" name="email" id="name" placeholder="Email" /></div>
+            <div className="col-6 col-12-xsmall"><input type="text" name="password" id="name" placeholder="Password" /></div>
+            <div className="col-6 col-12-xsmall"><input type="text" name="confirm_password" id="name" placeholder="Confirm Password" /></div>
             
-          </form>
-        </div>
-      </div>
-    </section>
-    </div>
+          </div>
+          
+        </form>
+        <ul className="actions">
+          <li>
+            <input type="submit" value="Submit" className="primary" form="register-form"/>
+          </li>
+        </ul>
+  </section>
+   
   )
 }
 

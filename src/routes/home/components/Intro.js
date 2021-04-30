@@ -11,8 +11,8 @@ const Intro = () => {
     </header>
     <p>The little cards grandma wrote her recipes on in her beautiful cursive are getting lost or are hard to read. You need somewhere secure to keep my recipes with me forever!</p>
     <ul className="actions">
-      <li><a href="\#" className="button">Register Here</a></li>
-      <li><a href="\#" className="button primary">Log In</a></li>
+      <li><a href="/register" className="button">Register Here</a></li>
+      <li><a href="/login" className="button primary">Log In</a></li>
     </ul>
   </section>
   )
