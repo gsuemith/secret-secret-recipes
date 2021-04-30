@@ -15,6 +15,7 @@ const Home = () => {
       document.body.removeChild(script)
     }
   }, [])
+  
 
   return (
     <>
