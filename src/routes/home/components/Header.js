@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 
+const URL = 'http://localhost:3000'
+
 const Header = () => {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = 'assets/js/main.js'
+    script.src = `${URL}/assets/js/main.js`
     script.defer = true;
     document.body.appendChild(script);
     return () => {

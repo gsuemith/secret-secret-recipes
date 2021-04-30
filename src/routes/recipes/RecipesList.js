@@ -8,9 +8,9 @@ const RecipesList = () => {
   <>
   <h2>A treasure trove of good food!</h2>
   <Switch>
-    <Route path="/recipes/add" component={AddRecipe}/>
-    <Route path="/recipes" >
-      List of recipes coming soon
+    <Route path={`${path}/add`} component={AddRecipe}/>
+    <Route path={path} >
+      <h3>List of recipes coming soon</h3>
     </Route>
   </Switch>
   </>
