@@ -4,6 +4,7 @@ import Footer from "./routes/home/components/Footer";
 import Header from "./routes/home/components/Header";
 
 import Home from "./routes/home/Home";
+import RecipesList from "./routes/recipes/RecipesList";
 import Login from "./routes/users/Login"
 import Register from "./routes/users/Register"
 
@@ -13,11 +14,11 @@ function App() {
     <Header/>
       <div id="main">
         <Switch>
-          {/**<PrivateRoute to="/account/:id" /> */}
-          {/**<PrivateRoute to="/recipes/add" /> */}
-          {/**<PrivateRoute to="/recipes/:id/edit" /> */}
-          {/**<Route to="/recipes/:id" /> */}
-          {/**<Route to="/recipes" /> */}
+          {/**<PrivateRoute path="/account/:id" /> */}
+          {/**<PrivateRoute path="/recipes/add" /> */}
+          {/**<PrivateRoute path="/recipes/:id/edit" /> */}
+          {/**<Route path="/recipes/:id" /> */}
+          <Route path="/recipes" component={RecipesList}/>
           <Route path="/login" component={Login}/>
           <Route path="/register" component={Register}/>
           <Route path="/" component={Home}/>

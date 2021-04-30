@@ -49,7 +49,7 @@ const Login = () => {
           </div>
          
           <div className="col-6 col-12-xsmall">
-            <input type="text"  onChange={onChange} value={formValues.password} name="password" id="password" placeholder="Password" />
+            <input type="password"  onChange={onChange} value={formValues.password} name="password" id="password" placeholder="Password" />
           </div>
           </div>
         </form>
