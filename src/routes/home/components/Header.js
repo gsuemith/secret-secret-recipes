@@ -20,7 +20,7 @@ const Header = () => {
           <img src="https://bit.ly/2Re0iaZ" alt="" />
         </a>
         <h1>
-          <strong>Secret Family Recipes</strong>, your place for <br />
+          <a href="/" style={{border: "none"}}><strong>Secret Family Recipes</strong></a>, your place for <br />
           generation after generation of tradition
         </h1>
       </div>
