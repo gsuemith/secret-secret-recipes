@@ -37,7 +37,7 @@ const Favorites = () => {
 							</article>
 						</div>
 						<ul className="actions">
-							<li><a href="\#" className="button">More Recipes</a></li>
+							<li><a href="/recipes" className="button">More Recipes</a></li>
 						</ul>
 					</section>
   )

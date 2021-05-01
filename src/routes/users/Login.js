@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router'
 
 const URL = process.env.REACT_APP_API_URL
 
@@ -11,12 +12,15 @@ const initialFormValues = {
 const Login = () => {
 
   const [formValues, setFormValues ] = useState(initialFormValues)
+
+  const { push } = useHistory()
   
   const submit = () => {
     axios
     .post(`${URL}/api/auth/login`, formValues)
     .then((res) => {
       localStorage.setItem('token', res.data.token);
+      push("/");
     })
     .catch(err => {
       console.log(err.message)
