@@ -80,20 +80,16 @@ const Register = (props) => {
     });
   }, [form]);
 
-  const register = e => {
-    e.preventDefault();
-    console.log('register!')
-  }
 
   return (
-    <div id="main">
+    
       <section>
         <h2>Create an Account!</h2>
-        <div className="row">
-          <div className="col-8 col-12-small">
-            <form onSubmit={onSubmit}>
+        <div className="col-8 col-12-small">
+          
+            <form onSubmit={onSubmit} id="register-form">
               <div className="row gtr-uniform gtr-50">
-                <div className="col-6 col-12-xsmall">
+                <div className="col-7 col-12-xsmall">
                   <input
                     type="text"
                     onChange={onChange}
@@ -103,7 +99,7 @@ const Register = (props) => {
                     placeholder="Email"
                   />
                 </div>
-                <div className="col-6 col-12-xsmall">
+                <div className="col-7 col-12-xsmall">
                   <input
                     type="text"
                     onChange={onChange}
@@ -115,7 +111,7 @@ const Register = (props) => {
                 </div>
                 <div className="col-6 col-12-xsmall">
                   <input
-                    type="text"
+                    type="password"
                     onChange={onChange}
                     value={form.password}
                     name="password"
@@ -125,7 +121,7 @@ const Register = (props) => {
                 </div>
                 <div className="col-6 col-12-xsmall">
                   <input
-                    type="text"
+                    type="password"
                     onChange={onChange}
                     value={form.confirmPassword}
                     name="confirmPassword"
@@ -134,22 +130,22 @@ const Register = (props) => {
                   />
                 </div>
               </div>
-              <ul className="actions">
-                <li>
-                  <input type="submit" value="Register" disabled={disabled} />
-                </li>
-              </ul>
-              <ul>
-                <div>{formErrors.email.toUpperCase()}</div>
-                <div>{formErrors.username.toUpperCase()}</div>
-                <div>{formErrors.password.toUpperCase()}</div>
-                <div>{formErrors.confirmPassword.toUpperCase()}</div>
-              </ul>
+              
             </form>
-          </div>
+            <ul className="actions">
+              <li>
+                <input type="submit" value="Register" disabled={disabled} form="register-form"/>
+              </li>
+            </ul>
+            <ul>
+              <div>{formErrors.email.toUpperCase()}</div>
+              <div>{formErrors.username.toUpperCase()}</div>
+              <div>{formErrors.password.toUpperCase()}</div>
+              <div>{formErrors.confirmPassword.toUpperCase()}</div>
+            </ul>
         </div>
       </section>
-    </div>
+    
   );
 };
 

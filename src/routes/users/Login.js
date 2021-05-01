@@ -16,24 +16,12 @@ const Login = (props) => {
 
   const { push } = useHistory()
   
-  const submit = () => {
-    axios
-    .post(`${URL}/api/auth/login`, formValues)
-    .then((res) => {
-      localStorage.setItem('token', res.data.token);
-      push("/");
-    })
-    .catch(err => {
-      console.log(err.message)
-    })
-  }
-
   const onSubmit = (e) => {
     setIsLoading(true);
     e.preventDefault();
     axios
       .post(
-        "https://tt16-secret-recipes.herokuapp.com/api/auth/login",
+        `${URL}/api/auth/login`,
         formValues
       )
       .then((res) => {
