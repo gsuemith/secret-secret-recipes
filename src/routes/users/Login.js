@@ -39,7 +39,7 @@ const Login = (props) => {
       .then((res) => {
         console.log(res);
         localStorage.setItem("token", res.data.token);
-        props.history.push("/");
+        push("/");
         setIsLoading(false);
       })
       .catch((err) => {
@@ -58,14 +58,14 @@ const Login = (props) => {
   };
 
   return (
-    <div id="main">
+    
       <section>
         <h2> Login to your secret secret account </h2>
-        <div className="row">
+        
           <div className="col-8 col-12-small">
-            <form onSubmit={onSubmit} method="post" action="#">
+            <form onSubmit={onSubmit} id="login-form">
               <div className="row gtr-uniform gtr-50">
-                <div className="col-6 col-12-xsmall">
+                <div className="col-7 col-12-xsmall">
                   <input
                     type="text"
                     onChange={onChange}
@@ -76,9 +76,8 @@ const Login = (props) => {
                     autoComplete="username"
                   />
                 </div>
-              </div>
-              <div className="row gtr-uniform gtr-50">
-                <div className="col-6 col-12-xsmall">
+
+                <div className="col-7 col-12-xsmall">
                   <input
                     type="password"
                     onChange={onChange}
@@ -90,12 +89,12 @@ const Login = (props) => {
                   />
                 </div>
               </div>
-              <ul className="actions">
-                <li>
-                  <input type="submit" value="Log In" />
-                </li>
-              </ul>
             </form>
+            <ul className="actions">
+              <li>
+                <input type="submit" value="Log In" form="login-form"/>
+              </li>
+            </ul>
             {isLoading && (
               <p style={{ color: "blue", textAlign: "center" }}>
                 {" "}
@@ -109,9 +108,9 @@ const Login = (props) => {
               </p>
             )}
           </div>
-        </div>
+        
       </section>
-    </div>
+    
   );
 };
 
