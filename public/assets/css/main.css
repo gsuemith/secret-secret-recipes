@@ -253,6 +253,11 @@ input, select, textarea {
 		font-size: larger;
 	}
 
+	span.add-category {
+		cursor: pointer;
+		color: #49bf9d;
+	}
+
 /* Container */
 
 	.container {

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import RecipesList from '../RecipesList'
 
 const initialForm = { instructions: ""}
 
@@ -74,8 +73,8 @@ const AddStep = ({ recipe, update }) => {
   <ol className="alt">
     {
       steps.map(({step_number, instructions}) => (
-      <li>
-        <div class="row">
+      <li key={step_number}>
+        <div className="row">
           <div className="col-10">
             <p>{instructions}</p>
           </div>
