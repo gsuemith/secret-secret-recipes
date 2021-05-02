@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const initialForm = {
-  name: "", quantity: 0, unit: ""
+  name: "", quantity: "", unit: ""
 }
 
 const Ingredients = ({ recipe, update }) => {
@@ -24,6 +24,17 @@ const Ingredients = ({ recipe, update }) => {
     })
   }
 
+  const changeHandler = e => {
+    const { name, value } = e.target
+    setForm({ ...form, [name]:value })
+  }
+
+  const submitHandler = e => {
+    e.preventDefault()
+    add(form)
+    setForm(initialForm)
+  }
+
   return (
   <div class="table-wrapper">
     <h3>Ingredients</h3>
@@ -35,8 +46,8 @@ const Ingredients = ({ recipe, update }) => {
       </thead>
       <tbody>
       {
-        ingredients.map(({name, quantity, unit}) => (
-        <tr>
+        ingredients.map(({name, quantity, unit}, idx) => (
+        <tr key={idx}>
           <td>{name}</td>
           <td>{quantity}</td>
           <td>{unit}</td>
@@ -45,19 +56,20 @@ const Ingredients = ({ recipe, update }) => {
       }
       </tbody>
     </table>
-    <form id="new-ingredient-form">
+    <form id="new-ingredient-form" onSubmit={submitHandler}>
       <div className="row gtr-uniform gtr-50">
+        
+        <div className="col-12">
+          <input type="text" placeholder="Ingredient Name" onChange={changeHandler} name="name" value={form.name}/>
+        </div>
+        <div className="col-6 col-12-small">
+          <input type="number" step=".1" placeholder="Quantity" onChange={changeHandler} name="quantity" value={form.quantity}/>
+        </div>
+        <div className="col-6 col-12-small">
+          <input list="unit" placeholder="Unit" onChange={changeHandler} name="unit" value={form.unit}/>
+        </div>
         <div className="col-4">
           <input form="new-ingredient-form" type="submit" value="Add Ingredient" className="button small"/>
-        </div>
-        <div className="col-12">
-          <input type="text" placeholder="Ingredient Name"/>
-        </div>
-        <div className="col-6 col-12-small">
-          <input type="number" placeholder="Quantity"/>
-        </div>
-        <div className="col-6 col-12-small">
-          <input list="unit" placeholder="Unit"/>
         </div>
       </div>
     </form>
