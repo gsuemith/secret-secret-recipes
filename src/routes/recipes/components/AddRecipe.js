@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import RecipesList from '../RecipesList'
+import AddStep from './AddStep'
 import Ingredients from './Ingredients'
 
 const initialState = {
@@ -82,22 +83,7 @@ const AddRecipe = () => {
 					<Ingredients ingredients={recipe.ingredients}/>
 				</div>
 				<div className="col-6 col-12-small">
-					<h3>Instructions</h3>
-					<ol>
-						{
-							recipe.steps.map(step => <li><p>{step.instructions}</p></li>)
-						}
-					</ol>
-					<form>
-      			<div className="row gtr-uniform gtr-50">
-							<div className="col-4">
-								<input type="submit" value="Add Step" className="button small"/>
-							</div>
-							<div className="col-12">
-								<textarea placeholder="Instructions"/>
-							</div>
-						</div>
-					</form>
+					<AddStep steps={recipe.steps}/>
 				</div>
 			</div>
 			<ul className="actions">
