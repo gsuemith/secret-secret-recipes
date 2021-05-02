@@ -18,11 +18,11 @@ const initialState = {
     // },
   ],
   steps: [
-    {
-      step_number: 1,
-      instructions:
-        "Put water in microwave safe container and heat on high for 5 minutes or until boiling.",
-    },
+    // {
+    //   step_number: 1,
+    //   instructions:
+    //     "Put water in microwave safe container and heat on high for 5 minutes or until boiling.",
+    // },
   ],
 };
 
