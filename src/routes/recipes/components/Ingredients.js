@@ -7,6 +7,7 @@ const initialForm = {
 const Ingredients = ({ recipe, update }) => {
   const { ingredients } = recipe;
   const [ form, setForm ] = useState(initialForm)
+  const [isAdding, setIsAdding] = useState(true)
 
   const remove = (name) => {
     update({
@@ -31,8 +32,13 @@ const Ingredients = ({ recipe, update }) => {
 
   const submitHandler = e => {
     e.preventDefault()
+    if(!isAdding){
+      setIsAdding(true)
+      return
+    }
     add(form)
     setForm(initialForm)
+    setIsAdding(false)
   }
 
   return (
@@ -51,25 +57,26 @@ const Ingredients = ({ recipe, update }) => {
           <td>{name}</td>
           <td>{quantity}</td>
           <td>{unit}</td>
-          <span onClick={() => remove(name)} className="icon solid fa-times" style={{cursor: "pointer"}}></span>
+          <span onClick={() => remove(name)} className="icon solid fa-times remove" style={{cursor: "pointer"}}></span>
         </tr>))
       }
       </tbody>
     </table>
     <form id="new-ingredient-form" onSubmit={submitHandler}>
       <div className="row gtr-uniform gtr-50">
-        
-        <div className="col-12">
-          <input type="text" placeholder="Ingredient Name" onChange={changeHandler} name="name" value={form.name}/>
-        </div>
-        <div className="col-6 col-12-small">
-          <input type="number" step=".1" placeholder="Quantity" onChange={changeHandler} name="quantity" value={form.quantity}/>
-        </div>
-        <div className="col-6 col-12-small">
-          <input list="unit" placeholder="Unit" onChange={changeHandler} name="unit" value={form.unit}/>
-        </div>
+        {isAdding && <>
+          <div className="col-12">
+            <input type="text" placeholder="Ingredient Name" onChange={changeHandler} name="name" value={form.name}/>
+          </div>
+          <div className="col-6 col-12-small">
+            <input type="number" step=".1" placeholder="Quantity" onChange={changeHandler} name="quantity" value={form.quantity}/>
+          </div>
+          <div className="col-6 col-12-small">
+            <input list="unit" placeholder="Unit" onChange={changeHandler} name="unit" value={form.unit}/>
+          </div>
+        </>}
         <div className="col-4">
-          <input form="new-ingredient-form" type="submit" value="Add Ingredient" className="button small"/>
+          <input form="new-ingredient-form" type="submit" value={`${isAdding ? 'Add':'New'} Ingredient`} className="button small"/>
         </div>
       </div>
     </form>

@@ -241,6 +241,18 @@ input, select, textarea {
 		text-align: right;
 	}
 
+	span.move:hover {
+		color: #49bf9d;
+		cursor: pointer;
+		font-size: larger;
+	}
+
+	span.remove:hover {
+		cursor: pointer;
+		color: red;
+		font-size: larger;
+	}
+
 /* Container */
 
 	.container {
@@ -2165,6 +2177,16 @@ input, select, textarea {
 		ol li {
 			padding-left: 0.25em;
 		}
+
+			ol.alt li {
+				border-bottom: solid 2px #efefef;
+				padding: 0.5em 0.5em;
+			}
+
+				ol.alt li:first-child {
+					border-top: 0;
+					padding-top: 0;
+				}
 
 	ul {
 		list-style: disc;

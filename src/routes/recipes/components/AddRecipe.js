@@ -11,11 +11,11 @@ const initialState = {
   categories: [],
   description: "",
   ingredients: [
-    {
-      name: "water",
-      quantity: 2,
-      unit: "cups",
-    },
+    // {
+    //   name: "water",
+    //   quantity: 2,
+    //   unit: "cups",
+    // },
   ],
   steps: [
     {
@@ -81,10 +81,10 @@ const AddRecipe = () => {
         </form>
         <div className="row">
           <div className="col-6 col-12-small">
-            <Ingredients recipe={recipe} update={setRecipe} />
+            <AddStep recipe={recipe} update={setRecipe}/>
           </div>
           <div className="col-6 col-12-small">
-            <AddStep steps={recipe.steps} />
+            <Ingredients recipe={recipe} update={setRecipe} />
           </div>
         </div>
         <ul className="actions">
