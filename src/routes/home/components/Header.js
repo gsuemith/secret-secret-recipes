@@ -17,7 +17,7 @@ const Header = () => {
     <header id="header">
       <div className="inner">
         <a href="\#" className="image avatar">
-          <img src="https://bit.ly/2Re0iaZ" alt="" />
+          <img src="/images/avatar.jpg" alt="" />
         </a>
         <h1>
           <a href="/" style={{border: "none"}}><strong>Secret Family Recipes</strong></a>, your place for <br />
