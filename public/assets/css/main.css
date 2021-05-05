@@ -241,6 +241,23 @@ input, select, textarea {
 		text-align: right;
 	}
 
+	span.move:hover {
+		color: #49bf9d;
+		cursor: pointer;
+		font-size: larger;
+	}
+
+	span.remove:hover {
+		cursor: pointer;
+		color: red;
+		font-size: larger;
+	}
+
+	span.add-category {
+		cursor: pointer;
+		color: #49bf9d;
+	}
+
 /* Container */
 
 	.container {
@@ -1811,6 +1828,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="number"],
 	input[list],
 	select,
 	textarea {
@@ -1832,6 +1850,7 @@ input, select, textarea {
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
+		input[type="number"]:invalid,
 		input[list]:invalid,
 		select:invalid,
 		textarea:invalid {
@@ -1841,6 +1860,7 @@ input, select, textarea {
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
+		input[type="number"]:focus,
 		input[list]:focus,
 		select:focus,
 		textarea:focus {
@@ -1873,6 +1893,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="number"],
 	input[list],
 	select {
 		height: 2.75em;
@@ -2161,6 +2182,16 @@ input, select, textarea {
 		ol li {
 			padding-left: 0.25em;
 		}
+
+			ol.alt li {
+				border-bottom: solid 2px #efefef;
+				padding: 0.5em 0.5em;
+			}
+
+				ol.alt li:first-child {
+					border-top: 0;
+					padding-top: 0;
+				}
 
 	ul {
 		list-style: disc;
