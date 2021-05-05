@@ -4,7 +4,6 @@ import Intro from './components/Intro';
 import Contact from './components/Contact';
 
 const Home = () => {
-
   return (
       <>
         <Intro />
