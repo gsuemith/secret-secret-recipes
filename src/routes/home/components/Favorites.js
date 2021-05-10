@@ -17,10 +17,10 @@ const Favorites = () => {
 
   return (
 	<section id="two">
-		<h2>Our Favorite Recipes</h2>
 		<ul className="actions">
-			<li><a href="/recipes" className="button">See All Recipes</a></li>
+			<li><a href="/recipes" className="button primary">See All Recipes</a></li>
 		</ul>
+		<h2>Our Favorite Recipes</h2>
 		<div className="row">
 			{/* <article className="col-6 col-12-xsmall work-item">
 				<a href="images/fulls/01.jpg" className="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
